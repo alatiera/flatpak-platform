@@ -119,6 +119,20 @@
                     ]
                 }
             ]
+        },
+        {   "name" : "defaults",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "mkdir -p /usr/share/glib-2.0/schemas/",
+                "install -m644 -pD defaults.ini /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.override",
+                "glib-compile-schemas /usr/share/glib-2.0/schemas/"
+            ],
+             "sources" : [
+                {
+                    "type" : "file",
+                    "path" : "defaults.ini"
+                }
+            ]
         }
     ]
 }
